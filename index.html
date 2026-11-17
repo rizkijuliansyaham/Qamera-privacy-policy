@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+  <title>Kebijakan Privasi — Qamera</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #5c5c5c;
+      --accent: #d97706;
+      --border: #e2e2e2;
+      --card: #f8f7f4;
+      --maxw: 820px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121216;
+        --fg: #eaeaea;
+        --muted: #9aa0a6;
+        --accent: #ffd740;
+        --border: #282832;
+        --card: #1a1a22;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 72px; }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 8px; }
+    h1 { font-size: 1.7rem; margin: 0 0 4px; }
+    h2 { font-size: 1.2rem; margin: 32px 0 8px; color: var(--accent); }
+    h3 { font-size: 1.02rem; margin: 20px 0 4px; }
+    p, li { color: var(--fg); }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+    a { color: var(--accent); }
+    ul { padding-left: 22px; }
+    li { margin: 6px 0; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .lang-toggle {
+      display: inline-flex; gap: 0; border: 1px solid var(--border);
+      border-radius: 999px; overflow: hidden; margin-top: 14px;
+    }
+    .lang-toggle button {
+      border: 0; background: transparent; color: var(--muted);
+      padding: 7px 18px; font-size: 0.9rem; cursor: pointer; font-weight: 600;
+    }
+    .lang-toggle button.active { background: var(--accent); color: #121216; }
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+    footer { margin-top: 48px; border-top: 1px solid var(--border); padding-top: 16px; }
+    code { background: var(--card); padding: 1px 6px; border-radius: 5px; font-size: 0.88em; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Kebijakan Privasi — Qamera</h1>
+      <p class="muted">Terakhir diperbarui: 17 November 2026 · Last updated: November 17, 2026</p>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="btn-id" class="active" onclick="setLang('id')">Bahasa Indonesia</button>
+        <button id="btn-en" onclick="setLang('en')">English</button>
+      </div>
+    </header>
+
+    <!-- ===================== BAHASA INDONESIA ===================== -->
+    <section data-lang="id" class="visible">
+      <h2>1. Pendahuluan</h2>
+      <p>Qamera ("Aplikasi") adalah aplikasi kamera dan kontrol kamera jarak jauh (<em>Host &amp; Remote Live View</em>) antar-perangkat melalui jaringan lokal (Wi-Fi / Hotspot) tanpa memerlukan server eksternal, yang dikembangkan oleh <strong>devQ</strong> ("kami"). Kebijakan Privasi ini menjelaskan informasi apa yang diproses saat kamu menggunakan Aplikasi, untuk apa informasi itu digunakan, dan pilihan yang kamu miliki. Dengan menggunakan Aplikasi, kamu menyetujui kebijakan ini.</p>
+
+      <h2>2. Ringkasan</h2>
+      <ul>
+        <li>Aplikasi tidak memerlukan akun atau login.</li>
+        <li>Kami tidak meminta nama, email, nomor telepon, atau identitas pribadi lainnya untuk memakai Aplikasi.</li>
+        <li>Streaming <em>Live View</em>, QR pairing, dan perintah kontrol kamera berjalan <strong>langsung antar perangkat di jaringan lokalmu</strong> dan <strong>tidak pernah</strong> dikirim atau disimpan di server kami.</li>
+        <li>Foto dan video yang kamu ambil disimpan langsung di penyimpanan/Galeri perangkatmu.</li>
+        <li>Aplikasi menampilkan iklan dari pihak ketiga (<strong>Google AdMob</strong>) dan menggunakan <strong>Firebase Analytics</strong>, <strong>Firebase Remote Config</strong>, serta <strong>Google Play In-App Review</strong> saat perangkat terhubung ke internet (lihat bagian 5).</li>
+        <li>Kami tidak menjual data pribadimu.</li>
+      </ul>
+
+      <h2>3. Informasi yang Diproses</h2>
+      <p><strong>Data kamera &amp; koneksi lokal.</strong> Saat kamu mengaktifkan mode <em>Host QR</em> atau <em>Remote</em>, Aplikasi membuka koneksi WebSocket dan siaran penemuan perangkat (UDP) hanya di jaringan lokal (Hotspot atau Wi-Fi yang sama) dengan token PIN sementara. Aliran video pratinjau (<em>Live View</em>) hanya diteruskan ke perangkat Remote yang kamu hubungkan secara lokal dan tidak pernah diunggah ke internet.</p>
+      <p><strong>Data yang tersimpan di perangkatmu.</strong> Aplikasi menyimpan preferensi pengaturan secara lokal (pilihan bahasa dan tema tampilan), ID instalasi anonim (UUID acak untuk analitik aplikasi yang terhapus saat aplikasi di-uninstall), serta foto/video hasil jepretan di Galeri perangkatmu.</p>
+      <p><strong>Data yang diproses oleh pihak ketiga.</strong> Saat perangkat terhubung ke internet, layanan Google yang tertanam di Aplikasi dapat memproses data teknis perangkat seperti Advertising ID, alamat IP, merek/model perangkat, versi OS, dan versi aplikasi (lihat bagian 5).</p>
+
+      <h2>4. Izin Aplikasi dan Penggunaannya</h2>
+      <ul>
+        <li><strong>Kamera (<code>CAMERA</code>)</strong> — diperlukan untuk menampilkan pratinjau kamera, mengambil foto, merekam video, serta memindai QR Code saat menghubungkan HP Remote ke HP Host.</li>
+        <li><strong>Mikrofon (<code>RECORD_AUDIO</code>)</strong> — diperlukan untuk merekam suara saat kamu merekam video.</li>
+        <li><strong>Jaringan Lokal &amp; Wi-Fi (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>, <code>CHANGE_WIFI_MULTICAST_STATE</code>)</strong> — digunakan untuk mendeteksi alamat IP lokal perangkat dan menemukan perangkat Qamera Host di sekitar pada jaringan Hotspot/Wi-Fi yang sama tanpa internet.</li>
+        <li><strong>Penyimpanan (<code>WRITE_EXTERNAL_STORAGE</code> khusus Android 9 ke bawah)</strong> — digunakan untuk menyimpan foto dan video hasil tangkapan ke Galeri perangkat. Pada Android 10 ke atas, penyimpanan menggunakan <code>MediaStore</code> tanpa memerlukan izin akses baca seluruh galeri.</li>
+        <li><strong>Internet (<code>INTERNET</code>)</strong> — digunakan hanya untuk memuat iklan Google AdMob, mengirim event buka aplikasi anonim (<code>open_qamera</code>) ke Firebase Analytics, memeriksa versi minimum aplikasi via Firebase Remote Config, dan memfasilitasi ulasan Google Play. Fitur utama kamera dan remote tetap berfungsi tanpa internet.</li>
+      </ul>
+      <p>Aplikasi tidak mengakses kontak, lokasi GPS, riwayat panggilan, maupun pesanmu.</p>
+
+      <h2>5. Iklan dan Layanan Pihak Ketiga</h2>
+      <p>Untuk mendukung pengembangan dan pemeliharaan Aplikasi, Qamera menggunakan layanan pihak ketiga berikut:</p>
+      <ul>
+        <li><strong>Google AdMob</strong> — menampilkan iklan (termasuk iklan pembuka aplikasi/<em>App Open</em>, <em>Banner</em>, serta iklan video berbonus/<em>Rewarded</em> pada tombol "Support devQ").</li>
+        <li><strong>Firebase Analytics</strong> — mencatat event pembukaan aplikasi (<code>open_qamera</code>) menggunakan UUID instalasi anonim, merek/model perangkat, versi OS, dan versi aplikasi tanpa pengenal perangkat keras permanen (tanpa IMEI/Android ID).</li>
+        <li><strong>Firebase Remote Config &amp; Google Play In-App Update</strong> — memeriksa apakah versi aplikasi yang terpasang masih didukung atau memerlukan pembaruan.</li>
+        <li><strong>Google Play In-App Review</strong> — memfasilitasi pemberian rating dan ulasan aplikasi melalui layanan resmi Google Play.</li>
+      </ul>
+      <div class="card">
+        <p style="margin:0 0 6px;"><strong>Tautan Kebijakan Google:</strong></p>
+        <ul style="margin:0;">
+          <li>Kebijakan Privasi Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+          <li>Cara Google menggunakan data dari aplikasi mitra: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+        </ul>
+      </div>
+
+      <h2>6. Privasi Anak</h2>
+      <p>Aplikasi ini tidak ditujukan untuk anak-anak di bawah usia 13 tahun dan kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak-anak.</p>
+
+      <h2>7. Perubahan Kebijakan Privasi</h2>
+      <p>Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan ditampilkan pada halaman ini dengan memperbarui tanggal di bagian atas.</p>
+
+      <h2>8. Hubungi Kami</h2>
+      <p>Jika kamu memiliki pertanyaan atau permintaan terkait Kebijakan Privasi ini, hubungi kami di: <a href="mailto:qj.fdevs@gmail.com">qj.fdevs@gmail.com</a></p>
+    </section>
+
+    <!-- ===================== ENGLISH ===================== -->
+    <section data-lang="en">
+      <h2>1. Introduction</h2>
+      <p>Qamera ("the App") is a camera and local device-to-device remote camera controller (<em>Host &amp; Remote Live View</em>) over a local Wi-Fi or Hotspot network without external servers, developed by <strong>devQ</strong> ("we", "us"). This Privacy Policy explains what information is processed when you use the App, how it is used, and the choices you have. By using the App, you agree to this policy.</p>
+
+      <h2>2. Summary</h2>
+      <ul>
+        <li>The App does not require an account or login.</li>
+        <li>We do not ask for your name, email address, phone number, or other personal identifiers to use the App.</li>
+        <li><em>Live View</em> streaming, QR pairing, and remote camera controls run <strong>directly between your devices on the local network</strong> and are <strong>never</strong> sent to or stored on our servers.</li>
+        <li>Photos and videos you capture are saved directly to your device storage/Gallery.</li>
+        <li>The App displays third-party ads (<strong>Google AdMob</strong>) and uses <strong>Firebase Analytics</strong>, <strong>Firebase Remote Config</strong>, and <strong>Google Play In-App Review</strong> when internet is available (see Section 5).</li>
+        <li>We do not sell your personal data.</li>
+      </ul>
+
+      <h2>3. Information Processed</h2>
+      <p><strong>Camera &amp; local connection data.</strong> When you enable <em>Host QR</em> or <em>Remote</em> mode, the App opens a local WebSocket connection and local UDP discovery broadcast (on the same Hotspot or Wi-Fi network) secured with a temporary PIN token. Live View preview frames are transmitted only to your paired local Remote device and are never uploaded to the internet.</p>
+      <p><strong>Data stored on your device.</strong> The App stores your local preferences (language and theme), a random anonymous installation UUID for analytics (deleted upon uninstall), and captured photos/videos in your device Gallery.</p>
+      <p><strong>Data processed by third parties.</strong> When connected to the internet, embedded Google services may process technical device data such as Advertising ID, IP address, device brand/model, OS version, and app version (see Section 5).</p>
+
+      <h2>4. App Permissions and Usage</h2>
+      <ul>
+        <li><strong>Camera (<code>CAMERA</code>)</strong> — required for camera preview, taking photos, recording videos, and scanning QR codes to pair a Remote phone with a Host phone.</li>
+        <li><strong>Microphone (<code>RECORD_AUDIO</code>)</strong> — required to capture audio when recording videos.</li>
+        <li><strong>Local Network &amp; Wi-Fi (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>, <code>CHANGE_WIFI_MULTICAST_STATE</code>)</strong> — used to detect your local IP address and discover nearby Qamera Host devices on the same Hotspot/Wi-Fi network without internet.</li>
+        <li><strong>Storage (<code>WRITE_EXTERNAL_STORAGE</code> for Android 9 and below)</strong> — used to save captured photos and videos to your Gallery. On Android 10+, media is saved via <code>MediaStore</code> without requiring permission to read your entire photo library.</li>
+        <li><strong>Internet (<code>INTERNET</code>)</strong> — used solely for Google AdMob ads, anonymous app-open analytics (<code>open_qamera</code>), Firebase Remote Config version checks, and Google Play reviews. Core camera and local remote features work offline.</li>
+      </ul>
+      <p>The App does not access your contacts, GPS location, call logs, or messages.</p>
+
+      <h2>5. Ads and Third-Party Services</h2>
+      <p>To support development and maintenance, Qamera uses the following third-party services:</p>
+      <ul>
+        <li><strong>Google AdMob</strong> — serves ads (including App Open, Banner, and Rewarded video ads on the "Support devQ" button).</li>
+        <li><strong>Firebase Analytics</strong> — logs app-open events (<code>open_qamera</code>) with an anonymous installation UUID, device brand/model, OS version, and app version without persistent hardware identifiers (no IMEI/Android ID).</li>
+        <li><strong>Firebase Remote Config &amp; Google Play In-App Update</strong> — checks whether the installed version is supported or requires an update.</li>
+        <li><strong>Google Play In-App Review</strong> — facilitates rating and reviewing the App via official Google Play services.</li>
+      </ul>
+      <div class="card">
+        <p style="margin:0 0 6px;"><strong>Google Policy Links:</strong></p>
+        <ul style="margin:0;">
+          <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+          <li>How Google uses data from partner apps: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+        </ul>
+      </div>
+
+      <h2>6. Children's Privacy</h2>
+      <p>This App is not directed to children under the age of 13, and we do not knowingly collect personal information from children.</p>
+
+      <h2>7. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised date at the top.</p>
+
+      <h2>8. Contact Us</h2>
+      <p>If you have any questions or requests regarding this Privacy Policy, contact us at: <a href="mailto:qj.fdevs@gmail.com">qj.fdevs@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <p class="muted">&copy; 2026 devQ — Qamera (<code>com.devq.camera_qamera</code>)</p>
+    </footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(function (el) {
+        el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
+      });
+      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+</body>
+</html>
